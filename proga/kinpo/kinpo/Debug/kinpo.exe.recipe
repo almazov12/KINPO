@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ProjectOutputs>
+    <ProjectOutput>
+      <FullPath>C:\Kinpo\proga\kinpo\Debug\ChoiceOfFixedPoints_UnitTest.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Kinpo\proga\kinpo\Debug\numberOfTranspositionWithFixedPoints_UnitTest.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Kinpo\proga\kinpo\Debug\numberOfTranspositionWithoutFixedPoints_UnitTest.dll</FullPath>
+    </ProjectOutput>
+    <ProjectOutput>
+      <FullPath>C:\Kinpo\proga\kinpo\Debug\kinpo.exe</FullPath>
+    </ProjectOutput>
+  </ProjectOutputs>
+  <ContentFiles />
+  <SatelliteDlls />
+  <NonRecipeFileRefs />
+</Project>
