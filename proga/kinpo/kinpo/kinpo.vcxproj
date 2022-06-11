@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c608db31-88ae-4626-b3dd-531b7d249cd5}</ProjectGuid>
+    <ProjectGuid>{8d2cb7a9-8b17-4002-92b0-2688391972c9}</ProjectGuid>
     <RootNamespace>kinpo</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -140,17 +140,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="kinpo.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ChoiceOfFixedPoints_UnitTest\ChoiceOfFixedPoints_UnitTest.vcxproj">
-      <Project>{e3623a4c-d501-4474-84ad-2fd0e4407890}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\numberOfTranspositionWithFixedPoints_UnitTest\numberOfTranspositionWithFixedPoints_UnitTest.vcxproj">
-      <Project>{582e8644-e353-4fbd-a046-3b65360cfec6}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\numberOfTranspositionWithoutFixedPoints_UnitTest\numberOfTranspositionWithoutFixedPoints_UnitTest.vcxproj">
-      <Project>{d8cb6377-4bf9-40d7-b962-7ce1471886e9}</Project>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header.h" />

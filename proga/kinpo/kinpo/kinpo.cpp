@@ -1,14 +1,40 @@
 ﻿#include <stdio.h>
-#include <sstream>
+#include <string>
+#include <fstream>
 #include "Header.h"
 
 using namespace std;
 
 int main(const int argc, char** argv)
 {
-    printf("%d\n", numberOfTranspositionWithoutFixedPoints(5));
-    //printf("%d\n", choiceOfFixedPoints(9, 6));
-    //printf("D(%d, %d) = %u\n", 9, 6, numberOfTranspositionWithFixedPoints(9, 6));
+    ifstream fin;
+    ofstream fout;
+
+    fin.open("input.txt");
+    int i = 0;
+    int amountOfNumbers = 0;
+    int numberOfFixedPoints = 0;
+    string data;
+    if (fin.is_open()) {
+        while (!fin.eof() && i < 2)
+        {
+            fin >> data;
+            if (i == 0)
+                amountOfNumbers = std::stoi(data);
+            if (i == 1)
+                numberOfFixedPoints = std::stoi(data);
+            i++;
+        }
+    }
+    fin.close();
+
+    fout.open("output.txt");
+
+    if (fout.is_open()) {
+        fout << numberOfTranspositionWithFixedPoints(amountOfNumbers, numberOfFixedPoints);
+    }
+    fout.close();
+
     return 0;
 }
 
