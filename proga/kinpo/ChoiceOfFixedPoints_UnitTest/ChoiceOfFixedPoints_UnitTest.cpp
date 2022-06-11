@@ -20,17 +20,6 @@ namespace ChoiceOfFixedPointsUnitTest
 			Assert::AreEqual(expResult, result);
 		};
 
-		TEST_METHOD(InvalidInputData)
-		{
-			int amountOfNumber = -1;
-			int numberOfFixedPoints = -5;
-
-			int result = choiceOfFixedPoints(amountOfNumber, numberOfFixedPoints);
-			int expResult = -1;
-
-			Assert::AreEqual(expResult, result);
-		};
-
 		TEST_METHOD(OneArgumentGreaterThanTheOther)
 		{
 			int amountOfNumber = 5;

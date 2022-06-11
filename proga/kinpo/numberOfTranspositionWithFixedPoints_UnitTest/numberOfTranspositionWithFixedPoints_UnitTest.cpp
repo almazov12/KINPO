@@ -19,18 +19,5 @@ namespace numberOfTranspositionWithFixedPointsUnitTest
 
 			Assert::AreEqual(expResult, result);
 		};
-		
-		TEST_METHOD(IncorrectInput)
-		{
-			int amountOfNumber = -6;
-			int numberOfFixedPoints = -5;
-
-			int result = numberOfTranspositionWithFixedPoints(amountOfNumber, numberOfFixedPoints);
-			int expResult = -1;
-
-			Assert::AreEqual(expResult, result);
-		};
-
-
 	};
 }
