@@ -20,6 +20,16 @@ namespace numberOfTranspositionWithoutFixedPointsUnitTest
 			Assert::AreEqual(expResult, result);
 		};
 
+		TEST_METHOD(ArgumentIsZero)
+		{
+			int amountOfNumber = 0;
+
+			int result = numberOfTranspositionWithoutFixedPoints(amountOfNumber);
+			int expResult = 1;
+
+			Assert::AreEqual(expResult, result);
+		};
+
 		TEST_METHOD(complexTest)
 		{
 			int amountOfNumber = 5;

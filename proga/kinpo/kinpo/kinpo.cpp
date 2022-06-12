@@ -1,4 +1,5 @@
 ﻿#include <stdio.h>
+#include <iostream>
 #include <string>
 #include <fstream>
 #include "Header.h"
@@ -66,6 +67,6 @@ int choiceOfFixedPoints(int amountOfNumbers, int numberOfFixedPoints)
 }
 
 int numberOfTranspositionWithFixedPoints(int amountOfNumbers, int numberOfFixedPoints)
-{
+{    
     return choiceOfFixedPoints(amountOfNumbers, numberOfFixedPoints) * numberOfTranspositionWithoutFixedPoints(amountOfNumbers - numberOfFixedPoints);
 }
