@@ -8,33 +8,53 @@ using namespace std;
 
 int main(const int argc, char** argv)
 {
+    setlocale(LC_ALL, "Russian");
     ifstream fin;
     ofstream fout;
 
-    fin.open("input.txt");
-    int i = 0;
-    int amountOfNumbers = 0;
-    int numberOfFixedPoints = 0;
-    string data;
-    if (fin.is_open()) {
+    try
+    {
+        fin.open(".\\input.txt");
+        if (fin.is_open()==0)
+            throw ("Неверно указан файл с входными данными. Возможно, файл не существует");
+        int i = 0;
+        int amountOfNumbers=0;
+        int numberOfFixedPoints=0;
+        string data;
+        
         while (!fin.eof() && i < 2)
         {
             fin >> data;
+            if (fin.eof() && data.empty())
+                throw "Входной файл является пустым.";
             if (i == 0)
                 amountOfNumbers = std::stoi(data);
             if (i == 1)
                 numberOfFixedPoints = std::stoi(data);
             i++;
         }
+        fin.close();
+        
+        fout.open(".\\output.txt");
+        if (fout.is_open() == 0)
+            throw "Неверно указан файл для выходных данных. Возможно, указанного расположения не существует";
+        try 
+        {
+            fout << numberOfTranspositionWithFixedPoints(amountOfNumbers, numberOfFixedPoints);
+        }
+        catch (const int value)
+        {
+            if (value == 1)
+                cout << "Один из операндов не является натуральным числом" << endl;
+            if (value == 2)
+                cout << "Неверные входные данные: один из операндов не принадлежит диапазону, указанному в требованиях" << endl;
+        }
+        fout.close();
     }
-    fin.close();
-
-    fout.open("output.txt");
-
-    if (fout.is_open()) {
-        fout << numberOfTranspositionWithFixedPoints(amountOfNumbers, numberOfFixedPoints);
+    catch (const char* e)
+    {
+        cout << e << endl;
     }
-    fout.close();
 
     return 0;
 }
@@ -67,6 +87,11 @@ int choiceOfFixedPoints(int amountOfNumbers, int numberOfFixedPoints)
 }
 
 int numberOfTranspositionWithFixedPoints(int amountOfNumbers, int numberOfFixedPoints)
-{    
+{
+    if (amountOfNumbers < 0 || numberOfFixedPoints < 0)
+        throw 1;
+    if (amountOfNumbers > 9 || numberOfFixedPoints > amountOfNumbers)
+        throw 2;
+    
     return choiceOfFixedPoints(amountOfNumbers, numberOfFixedPoints) * numberOfTranspositionWithoutFixedPoints(amountOfNumbers - numberOfFixedPoints);
 }
