@@ -1,6 +1,6 @@
 #pragma once
-int numberOfTranspositionWithoutFixedPoints(int amountOfNumbers);
+int numberOfTranspositionWithoutFixedPoints(int amountOfNumbersWithoutFixedPoints);
 
-int choiceOfFixedPoints(int amountOfNumbers, int numberOfFixedPoints);
+int choiceOfFixedPoints(int totalAmountOfNumbers, int numberOfChoicesNumbers);
 
-int numberOfTranspositionWithFixedPoints(int amountOfNumbers, int numberOfFixedPoints);
+int numberOfTranspositionWithFixedPoints(int amountNumbers, int amountFixedPoints);
