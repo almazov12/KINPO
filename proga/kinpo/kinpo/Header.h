@@ -1,5 +1,4 @@
 #pragma once
-
 int numberOfTranspositionWithoutFixedPoints(int amountOfNumbers);
 
 int choiceOfFixedPoints(int amountOfNumbers, int numberOfFixedPoints);

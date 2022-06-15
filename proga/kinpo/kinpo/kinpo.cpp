@@ -59,39 +59,39 @@ int main(const int argc, char** argv)
     return 0;
 }
 
-int numberOfTranspositionWithoutFixedPoints(int amountOfNumbers)
+int numberOfTranspositionWithoutFixedPoints(int amountOfNumbersWithoutFixedPoints)
 {
-    int a = 0, b = 1;
-    for (int i = 2; i < amountOfNumbers; i++)
+    int transpositionOneNumber = 0, tranpositionTwoNumbers = 1;
+    for (int i = 2; i < amountOfNumbersWithoutFixedPoints; i++)
     {
         if (i % 2)
-            b = i * (a + b);
+            tranpositionTwoNumbers = i * (transpositionOneNumber + tranpositionTwoNumbers);
         else
-            a = i * (a + b);
+            transpositionOneNumber = i * (transpositionOneNumber + tranpositionTwoNumbers);
     }
-    return amountOfNumbers % 2 ? a : b;
+    return amountOfNumbersWithoutFixedPoints % 2 ? transpositionOneNumber : tranpositionTwoNumbers;
 }
 
-int choiceOfFixedPoints(int amountOfNumbers, int numberOfFixedPoints)
+int choiceOfFixedPoints(int totalAmountOfNumbers, int numberOfChoicesNumbers)
 {
-    int argumentsDifference = amountOfNumbers - numberOfFixedPoints;
-    if (numberOfFixedPoints > argumentsDifference)
-        numberOfFixedPoints = argumentsDifference;
-    if (!numberOfFixedPoints)
+    int argumentsDifference = totalAmountOfNumbers - numberOfChoicesNumbers;
+    if (numberOfChoicesNumbers > argumentsDifference)
+        numberOfChoicesNumbers = argumentsDifference;
+    if (!numberOfChoicesNumbers)
         return 1;
-    int multiplicationResult = argumentsDifference = amountOfNumbers - numberOfFixedPoints + 1;
+    int multiplicationResult = argumentsDifference = totalAmountOfNumbers - numberOfChoicesNumbers + 1;
     argumentsDifference++;
-    for (int i = 2; i <= numberOfFixedPoints; i++, argumentsDifference++)
+    for (int i = 2; i <= numberOfChoicesNumbers; i++, argumentsDifference++)
         multiplicationResult = multiplicationResult / i * argumentsDifference + multiplicationResult % i * argumentsDifference / i;
     return multiplicationResult;
 }
 
-int numberOfTranspositionWithFixedPoints(int amountOfNumbers, int numberOfFixedPoints)
+int numberOfTranspositionWithFixedPoints(int amountNumbers, int amountFixedPoints)
 {
-    if (amountOfNumbers < 0 || numberOfFixedPoints < 0)
+    if (amountNumbers < 0 || amountFixedPoints < 0)
         throw 1;
-    if (amountOfNumbers > 9 || numberOfFixedPoints > amountOfNumbers)
+    if (amountNumbers > 9 || amountFixedPoints > amountNumbers)
         throw 2;
     
-    return choiceOfFixedPoints(amountOfNumbers, numberOfFixedPoints) * numberOfTranspositionWithoutFixedPoints(amountOfNumbers - numberOfFixedPoints);
+    return choiceOfFixedPoints(amountNumbers, amountFixedPoints) * numberOfTranspositionWithoutFixedPoints(amountNumbers - amountFixedPoints);
 }
