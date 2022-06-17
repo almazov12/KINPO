@@ -15,7 +15,7 @@ namespace numberOfTranspositionWithoutFixedPointsUnitTest
 			int amountOfNumber = 2;
 
 			int result = numberOfTranspositionWithoutFixedPoints(amountOfNumber);
-			int expResult = 2;
+			int expResult = 1;
 
 			Assert::AreEqual(expResult, result);
 		};
