@@ -11,7 +11,6 @@ int main(const int argc, char** argv)
     setlocale(LC_ALL, "Russian");
     ifstream fin;
     ofstream fout;
-
     try
     {
         fin.open(".\\input.txt");
