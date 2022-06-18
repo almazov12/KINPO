@@ -1,6 +1,6 @@
 #pragma once
-/*! 
-\param[in] amountOfNumbersWithoutFixedPoints - количество чисел, не являющихся неподвижными точами
+/*! Находит число перестановок без неподвижных точек
+\param[in] amountOfNumbersWithoutFixedPoints - количество чисел, не являющихся неподвижными точками
 \return количество перестановок без неподвижных точек
 */
 int numberOfTranspositionWithoutFixedPoints(int amountOfNumbersWithoutFixedPoints);
@@ -12,7 +12,7 @@ int numberOfTranspositionWithoutFixedPoints(int amountOfNumbersWithoutFixedPoint
 */
 int choiceOfFixedPoints(int totalAmountOfNumbers, int numberOfChoicesNumbers);
 
-/*!
+/*! Находит число перестановок с неподвижными точками
 \param[in] amountNumbers - общее количество чисел
 \param[in] amountFixedPoints - количество неподвижных точек
 \return произведение числа выборо неподвижных точек и числа перестановок без неподвижных точек
