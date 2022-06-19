@@ -16,25 +16,25 @@ int main(const int argc, char** argv)
         fin.open(argv[1]);
         //Выдать ошибку, если входной файл не указан в аргументах командной строки
         //Выдать ошибку, если входной файл невозможно открыть
-        if (fin.is_open()==0)
+        if (fin.is_open() == 0)
             throw ("Неверно указан файл с входными данными. Возможно, файл не существует");
         int i = 0;
-        int amountOfNumbers=0;
-        int numberOfFixedPoints=0;
+        int amountOfNumbers = 0;
+        int numberOfFixedPoints = 0;
         string data;
         //Считать числа из файла...
         while (!fin.eof())
         {
             fin >> data;
             //Выдать ошибку, если входной файл имеет некорректные символы
-            for (int i=0;i<data.length();i++)
+            for (int i = 0;i < data.length();i++)
             {
                 if (!isdigit(data[i]))
                     throw "Недопустимые входные данные: ожидались натуральные числа, а введены символы";
             }
             if (fin.eof() && data.empty())
                 throw "Входной файл является пустым.";
-            
+
             if (i == 0)
                 amountOfNumbers = std::stoi(data);
             if (i == 1)
@@ -42,11 +42,11 @@ int main(const int argc, char** argv)
             i++;
         }
         fin.close();
-        
+
         fout.open(argv[2]);
         if (fout.is_open() == 0)
             throw "Неверно указан файл для выходных данных. Возможно, указанного расположения не существует";
-        try 
+        try
         {
             //Вычислить количество перестановок с неподвижными точками
             //Записать результат вычислений в выходной файл
@@ -76,21 +76,18 @@ int numberOfTranspositionWithoutFixedPoints(int amountOfNumbersWithoutFixedPoint
     //Считать, что есть единственная перестановка двух чисел без неподвижных точек
     int tranpositionTwoNumbers = 1;
     //Для количества чисел, начиная от двух, без неподвижных точек…
-    int cont = 0;
-    for (int i = 2; i < amountOfNumbersWithoutFixedPoints; i++)
+    for (int i = 2; i < amountOfNumbersWithoutFixedPoints; ++i)
     {
 
         //Если количество чисел нечетно, Изменить значение числа перестановок двух чисел без неподвижных точек на количество чисел,
         //умноженной на сумму перестановок одного числа и двух чисел без неподвижных точек
-        if (cont == 1) {
+        if (i % 2) {
             tranpositionTwoNumbers = i * (transpositionOneNumber + tranpositionTwoNumbers);
-            cont = 0;
         }
         //Иначе, изменить значение числа перестановок одного числа без неподвижных точек на количество чисел,
         //умноженной на сумму перестановок одного числа и двух чисел без неподвижных точек
         else {
             transpositionOneNumber = i * (transpositionOneNumber + tranpositionTwoNumbers);
-            cont = 1;
         }
     }
     //Если количество чисел нечетное, то вернуть количество перестановок с одним числом без неподвижных точек

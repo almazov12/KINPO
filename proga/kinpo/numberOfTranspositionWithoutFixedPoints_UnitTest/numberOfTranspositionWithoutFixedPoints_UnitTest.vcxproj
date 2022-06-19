@@ -170,8 +170,8 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ChoiceOfFixedPoints_UnitTest\ChoiceOfFixedPoints_UnitTest.vcxproj">
-      <Project>{e3623a4c-d501-4474-84ad-2fd0e4407890}</Project>
+    <ProjectReference Include="..\kinpo\kinpo.vcxproj">
+      <Project>{5135a3ae-9137-4110-85de-09355f405308}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{8d2cb7a9-8b17-4002-92b0-2688391972c9}</ProjectGuid>
+    <ProjectGuid>{5135a3ae-9137-4110-85de-09355f405308}</ProjectGuid>
     <RootNamespace>kinpo</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
